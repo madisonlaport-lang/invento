@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InventoPro</title>
+    <script>
+      // Technique SPA pour CDN statique
+      // Encode le chemin complet en query string avant de rediriger vers index.html
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1).join('/') +
+        '/?p=' + encodeURIComponent(l.pathname + l.search) +
+        (l.hash ? l.hash : '')
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
